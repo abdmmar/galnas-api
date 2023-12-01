@@ -6,12 +6,10 @@
   "author": "Abdullah Ammar <abd.ammar.mar@gmail.com> (https://abdmmar.com/)",
   "license": "MIT",
   "keywords": [],
-  
   "scripts": {
     "build": "pkgroll --minify",
     "start": "node ./dist/index.mjs",
-    "dev": "tsx watch ./src/index.ts",
-    "dev:node": "node --env-file=.env --loader @swc-node/register/esm --watch ./src/index.ts --noEmit",
+    "dev": "node --env-file=.env --import tsx --watch ./src/index.ts --noEmit",
     "test:watch": "node --loader @swc-node/register/esm --test --watch \"**/*.test.ts\"",
     "test": "node --loader @swc-node/register/esm --test \"**/*.test.ts\""
   },
@@ -24,17 +22,8 @@
     "@/repositories": "./src/repositories",
     "@/middlewares": "./src/middlewares",
     "@/models": "./src/models",
-    "@/utils": "./src/utils"
-  },
-  "exports": {
-    "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
-    },
-    "import": {
-        "types": "./dist/index.d.mts",
-        "default": "./dist/index.mjs"
-    }
+    "@/utils": "./src/utils",
+    "@/configs": "./src/configs"
   },
   "engines": {
     "node": ">=21.3.0"

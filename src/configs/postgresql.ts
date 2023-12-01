@@ -1,6 +1,6 @@
 import client from 'pg';
 
-const pool = new client.Pool({
+const db = new client.Pool({
   user: process.env.POSTGRES_USER,
   host: process.env.POSTGRES_HOST,
   database: process.env.POSTGRES_DB,
@@ -8,4 +8,4 @@ const pool = new client.Pool({
   port: parseInt(process.env.POSTGRES_PORT as string),
 });
 
-export { pool };
+export { db };
