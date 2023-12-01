@@ -1,0 +1,27 @@
+{
+  "name": "galnas-api",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "author": "Abdullah Ammar <abd.ammar.mar@gmail.com> (https://abdmmar.tech/)",
+  "license": "MIT",
+  "keywords": [],
+  "scripts": {
+    "dev": "node --loader @swc-node/register/esm --watch ./src/index.ts",
+    "test": "node --loader @swc-node/register/esm --test \"**/*.test.?(t|j)s\""
+  },
+  "dependencies": {
+    "@koa/router": "12.0.1",
+    "koa": "2.14.2",
+    "koa-body": "6.0.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.4.1",
+    "@swc-node/register": "1.6.8",
+    "@types/koa": "2.13.12",
+    "@types/koa__router": "12.0.4",
+    "@types/node": "20.10.1",
+    "typescript": "5.3.2"
+  }
+}
