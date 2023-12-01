@@ -1,8 +1,6 @@
 import * as CollectionService from '@/services/collection.js'
 import { Middleware } from '@koa/router'
 
-// @ts-ignore Can't use Middleware type
-// const getCollections: Middleware = (ctx, next) => {
 const getCollections: Middleware = (ctx, next) => {
   const collections = CollectionService.getCollections()
 
