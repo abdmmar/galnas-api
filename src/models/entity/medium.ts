@@ -1,0 +1,1 @@
+export type Medium = { id: number, name: string }

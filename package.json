@@ -4,17 +4,19 @@
   "description": "",
   "type": "module",
   "main": "index.js",
-  "author": "Abdullah Ammar <abd.ammar.mar@gmail.com> (https://abdmmar.tech/)",
+  "author": "Abdullah Ammar <abd.ammar.mar@gmail.com> (https://abdmmar.com/)",
   "license": "MIT",
   "keywords": [],
   "scripts": {
-    "dev": "node --loader @swc-node/register/esm --watch ./src/index.ts",
+    "dev": "node --env-file=.env --loader @swc-node/register/esm --watch ./src/index.ts --noEmit",
     "test": "node --loader @swc-node/register/esm --test \"**/*.test.?(t|j)s\""
   },
   "dependencies": {
     "@koa/router": "12.0.1",
     "koa": "2.14.2",
-    "koa-body": "6.0.1"
+    "koa-body": "6.0.1",
+    "pg": "8.11.3",
+    "zod": "3.22.4"
   },
   "devDependencies": {
     "@biomejs/biome": "1.4.1",
@@ -22,6 +24,7 @@
     "@types/koa": "2.13.12",
     "@types/koa__router": "12.0.4",
     "@types/node": "20.10.1",
+    "@types/pg": "8.10.9",
     "typescript": "5.3.2"
   }
 }
