@@ -1,5 +1,5 @@
-import * as CollectionService from '@/services/collection.js'
-import { Middleware } from '@koa/router'
+import * as CollectionService from '@/services/collection.js';
+import { Middleware } from '@koa/router';
 
 const getCollections: Middleware = (ctx, next) => {
   const collections = CollectionService.getCollections()
@@ -24,4 +24,5 @@ const getCollections: Middleware = (ctx, next) => {
   }
 }
 
-export { getCollections }
+export { getCollections };
+
