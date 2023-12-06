@@ -7,8 +7,8 @@
 	"license": "MIT",
 	"keywords": [],
 	"scripts": {
-		"start": "tsx --env-file=.env ./src/index.ts --noEmit",
-		"dev": "tsx --env-file=.env --watch ./src/index.ts --noEmit",
+		"start": "tsx --env-file=.env ./src/index.ts --noEmit | pino-pretty",
+		"dev": "tsx --env-file=.env --watch ./src/index.ts --noEmit | pino-pretty",
 		"test:watch": "tsx --test --watch \"**/*.test.ts\"",
 		"test": "tsx --test \"**/*.test.ts\""
 	},
@@ -16,16 +16,24 @@
 		"node": ">=21.3.0"
 	},
 	"dependencies": {
+		"@koa/cors": "4.0.0",
 		"@koa/router": "12.0.1",
 		"koa": "2.14.2",
 		"koa-body": "6.0.1",
+		"koa-compress": "5.1.1",
+		"koa-helmet": "7.0.2",
+		"koa-pino-logger": "4.0.0",
 		"pg": "8.11.3",
+		"pino-pretty": "10.2.3",
 		"ws": "8.14.2",
 		"zod": "3.22.4"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.4.1",
 		"@types/koa": "2.13.12",
+		"@types/koa-compress": "4.0.6",
+		"@types/koa-pino-logger": "3.0.4",
+		"@types/koa__cors": "4.0.3",
 		"@types/koa__router": "12.0.4",
 		"@types/node": "20.10.1",
 		"@types/pg": "8.10.9",

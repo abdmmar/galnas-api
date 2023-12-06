@@ -1,10 +1,14 @@
-import * as CollectionHandler from '@/handlers/collection.js'
+import cors from '@koa/cors'
 import Router from '@koa/router'
 import { createServer } from 'http'
 import Koa from 'koa'
 import { koaBody } from 'koa-body'
-import { parse } from 'url'
+import compress from 'koa-compress'
+import helmet from 'koa-helmet'
+import pino from 'koa-pino-logger'
 import { WebSocketServer } from 'ws'
+
+import * as CollectionHandler from '@/handlers/collection.js'
 
 const PORT = parseInt(process.env.PORT as string)
 
@@ -12,6 +16,10 @@ const app = new Koa()
 const route = new Router()
 
 app
+  .use(cors())
+  .use(helmet())
+  .use(compress())
+  .use(pino())
   .use(koaBody())
   .use(route.routes())
   .use(route.allowedMethods())
@@ -41,7 +49,7 @@ wss.on('connection', function connection(ws, req) {
 })
 
 server.on("upgrade", (request, socket, head) => {
-  const { pathname } = request.url ? parse(request.url) : { pathname: null }
+  const pathname = request.url
 
   if (pathname === '/ws') {
     wss.handleUpgrade(request, socket, head, function done(ws) {

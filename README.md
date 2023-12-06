@@ -2,7 +2,7 @@
 
 ## TODO
 
-- [ ] add `pino` for logging
+- [x] add `pino` for logging
 - [ ] add postgresql
 - [ ] add upload file
 - [ ] integrate with s3
