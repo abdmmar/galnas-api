@@ -43,7 +43,7 @@ wss.on('connection', function connection(ws, req) {
 server.on("upgrade", (request, socket, head) => {
   const { pathname } = request.url ? parse(request.url) : { pathname: null }
 
-  if (pathname === '/foo') {
+  if (pathname === '/ws') {
     wss.handleUpgrade(request, socket, head, function done(ws) {
       wss.emit('connection', ws, request);
     })

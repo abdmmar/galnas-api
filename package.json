@@ -1,51 +1,36 @@
 {
-  "name": "galnas-api",
-  "version": "1.0.0",
-  "description": "",
-  "type": "module",
-  "author": "Abdullah Ammar <abd.ammar.mar@gmail.com> (https://abdmmar.com/)",
-  "license": "MIT",
-  "keywords": [],
-  "scripts": {
-    "build": "pkgroll --minify",
-    "start": "node ./dist/index.mjs",
-    "dev": "node --env-file=.env --import tsx --watch ./src/index.ts --noEmit",
-    "test:watch": "node --loader @swc-node/register/esm --test --watch \"**/*.test.ts\"",
-    "test": "node --loader @swc-node/register/esm --test \"**/*.test.ts\""
-  },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.cts",
-  "imports": {
-    "@/handlers": "./src/handlers",
-    "@/services": "./src/services",
-    "@/repositories": "./src/repositories",
-    "@/middlewares": "./src/middlewares",
-    "@/models": "./src/models",
-    "@/utils": "./src/utils",
-    "@/configs": "./src/configs"
-  },
-  "engines": {
-    "node": ">=21.3.0"
-  },
-  "dependencies": {
-    "@koa/router": "12.0.1",
-    "koa": "2.14.2",
-    "koa-body": "6.0.1",
-    "pg": "8.11.3",
-    "ws": "8.14.2",
-    "zod": "3.22.4"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.4.1",
-    "@swc-node/register": "1.6.8",
-    "@types/koa": "2.13.12",
-    "@types/koa__router": "12.0.4",
-    "@types/node": "20.10.1",
-    "@types/pg": "8.10.9",
-    "@types/ws": "8.5.10",
-    "pkgroll": "2.0.1",
-    "tsx": "4.6.1",
-    "typescript": "5.3.2"
-  }
+	"name": "galnas-api",
+	"version": "1.0.0",
+	"description": "",
+	"type": "module",
+	"author": "Abdullah Ammar <halo@abdmmar.com> (https://abdmmar.com/)",
+	"license": "MIT",
+	"keywords": [],
+	"scripts": {
+		"start": "tsx --env-file=.env ./src/index.ts --noEmit",
+		"dev": "tsx --env-file=.env --watch ./src/index.ts --noEmit",
+		"test:watch": "tsx --test --watch \"**/*.test.ts\"",
+		"test": "tsx --test \"**/*.test.ts\""
+	},
+	"engines": {
+		"node": ">=21.3.0"
+	},
+	"dependencies": {
+		"@koa/router": "12.0.1",
+		"koa": "2.14.2",
+		"koa-body": "6.0.1",
+		"pg": "8.11.3",
+		"ws": "8.14.2",
+		"zod": "3.22.4"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.4.1",
+		"@types/koa": "2.13.12",
+		"@types/koa__router": "12.0.4",
+		"@types/node": "20.10.1",
+		"@types/pg": "8.10.9",
+		"@types/ws": "8.5.10",
+		"tsx": "4.6.1",
+		"typescript": "5.3.2"
+	}
 }
